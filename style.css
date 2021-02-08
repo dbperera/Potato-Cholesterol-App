@@ -1,0 +1,171 @@
+/* Page Style */
+body {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(0, 25, 35, .8); /*Background color, random value atm*/
+    background-attachment: fixed; /* Fixed even when scrolling */
+}
+
+h1 {
+    font-family: "Verdana";
+    text-transform: uppercase;
+    border-radius:30px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left:70px;
+    margin-right:70px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+    /* Makes text not-selectable */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+/* General Buttons */
+.button{
+    background-color: black; 
+    border-radius: 10px;
+    border: 2px solid black;
+    color: white;
+    padding: 5px 28px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    transition-duration:0.4s;
+}
+
+.button:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-color: black;
+}
+
+/* Input Box */
+.input{
+    padding-left:5px;
+    padding-right:5px;
+    padding-top:2px;
+    padding-bottom: 2px;
+}
+
+/* Back to Top button */
+#myBtn {
+    position: fixed;
+    bottom: 8%;
+    right: 3%;
+    z-index: 99; /*makes sure the button is on top of everything*/
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black; /*text color*/
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 10px;
+}
+
+#myBtn:hover{
+    background-color: white;
+}
+
+#top{
+    text-align:center;
+}
+
+/* Page Columns */
+.column {
+    float: left;
+    padding:30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 5px;
+    border-radius: 40px;
+    width: 40%; /* Each column takes up 50% of the page! */
+    margin-left:70px;
+    margin-bottom: 50px;
+}
+.column2{
+    float: right;
+    padding:30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 5px;
+    border-radius: 40px;
+    width: 40%; /* Each column takes up 50% of the page! */
+    margin-right:70px;
+    margin-bottom: 50px;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Quick reload button for testing purposes */
+#testPotate {
+    position: fixed;
+    z-index: 99;
+    bottom: 1.4%;
+    left: 0.9%;
+}
+
+/* Footer */
+#Footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(161, 161, 161, 1);
+    color: black; /*text color*/
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+
+    /* Makes text not-selectable */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Table Styles */
+table, th, td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: white;
+}
+th, td
+{
+    padding: 15px;
+}
+
+/*Scroll Bar*/
+::-webkit-scrollbar{
+    width:10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

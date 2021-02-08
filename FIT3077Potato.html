@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<!-- TODO:
+    - Blank for practitioner to enter ID, button to submit
+        - To remove: The table. Use script to get and generate table for patient list.
+    - Button to update selected patient info
+    - The table with the results, and threshold stuff
+        - To remove: the table. Again, just use the script for generation. Perhaps we'll leave the headers there though? Who knows.
+    - Highlighting red cholesterol values (values above average of all monitored patients & let practitioner choose to highlights values above a set threshold)
+    - machine learning???
+-->
+
+<html>
+<!-- HTML HEAD -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Potato Cholestrol App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link href = "style.css" type = "text/css" rel = "stylesheet"> <!-- Links the Style Sheet -->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="RetrieveDataFromServer.js"></script>
+</head>
+
+<!-- HTML BODY -->
+<body>
+    <a href="#Top" id="myBtn">Top</a>
+
+    <div style="padding:10px;" class="row">
+        <!-- Sets overall background colour, page padding -->
+
+        <!-- Title Heading -->
+        <div id="#top"><h1>Potato Cholestrol App</h1></div>
+
+        <!-- Get Patient List -->
+        <div class="column" align="center">
+            <!-- User Inputs -->
+            <form id="PractitionerForm" onsubmit="GetPatientList();return false">
+                <label for="IDNumber">ID Number: </label>
+                <input type="text" id="IDNumber" name="IDNumber" class="input"><br><br>
+                <button type="button" class="button" onclick="GetPatientList();return false">Get Patient List</button>
+            </form>
+
+            <br> <!-- Break tag to separate table -->
+
+            <!-- Placeholder table for list of patients -->
+            <table id = "PatientTable">
+                <thead id = "PatientTableHeader">
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody id = "PatientTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Input Cholesterol Threshold Value -->
+        <div class="column2" align="center">
+            <!-- User Inputs -->
+            <form id = CholesterolThresholdForm onsubmit="UpdateThresholdValue();return false">
+                <label for="ThresholdNumber">Cholesterol Threshold: </label>
+                <input type="text" id="ThresholdNumber" name="ThresholdNumber" class="input"><br><br>
+                <button type="button" class="button" onclick="UpdateThresholdValue();return false">Update</button>
+            </form>
+
+            <br> <!-- Break tag to separate table -->
+
+            <!-- Cholesterol Table -->
+            <!-- Change this into automatic generation of table -->
+            <center>
+                <table id = "CholesterolTable">
+                    <thead id = "CholesterolTableHeader">
+                        <tr>
+                            <th width="200">Name</th>
+                            <th width="200">Total Cholestrol (mg/dL)</th>
+                            <th width="200">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id = "CholesterolTableBody"></tbody>
+                </table>
+            </center>
+        </div>
+    </div>
+
+    <div id="Footer"> FIT3077 - Software Engineering: Architecture Design, Assignment 2 © Potato, 2020 </div>
+
+</body>
+</html>
